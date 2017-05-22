@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Recomendations</title>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css" />
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular-touch.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular-animate.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+    <script src="http://ui-grid.info/release/ui-grid-unstable.js"></script>
+    <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid-unstable.css" type="text/css">
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .navbar-brand {
+          padding: 0px;
+        }
+        .navbar-brand>img {
+          height: 100%;
+          padding: 15px;
+          width: auto;
+        }
+        .example2 .navbar-brand>img {
+              padding: 7px 15px;
+            }
+    </style>
+</head>
+<body ng-app="app" ng-controller="GridCtrl as grid">
+   
+    <div class="container example2" >
+        <nav class="navbar navbar-default row">
+            <div class="container-fluid ">
+                <div class="navbar-header">
+                    
+                    <a class="navbar-brand" href="#">
+                        <img src="http://res.cloudinary.com/candidbusiness/image/upload/v1455406304/dispute-bills-chicago.png" alt="Dispute Bills">
+                    </a>
+                </div>
+               
+                <!--/.nav-collapse -->
+            </div>
+            <!--/.container-fluid -->
+        </nav>
+    
+        <div class="row well well-sm" >
+
+
+           
+                <input id="Names"  type="text" ng-keyup="complete()" />
+                <label>recommends to</label>
+                <select name="buySell" id="buySell">
+
+                    <option selected="selected">Buy</option>
+                    <option>Sell</option>
+
+                </select>
+
+                <select name="CompanyName"  id="CompanyName">
+
+                    <option selected="selected">infosys</option>
+                    <option>Wipro</option>
+                    <option>HCL</option>
+                    <option>Adobe</option>
+                    <option>Cognizant</option>
+
+                </select>
+                <label>@ Start Price:</label>
+                <input id="StartPrice"  type="number" />
+                <label>and Sell Price:</label>
+                <input id="SellPrice"  type="number" />&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="button" class="btn btn-sm btn-success" style="width:82px">Apply</button>
+           
+           
+
+
+
+
+        </div>
+
+        <div class="row">
+            &nbsp;
+            </div>
+
+            <div class="row">
+                <div ui-grid="grid.gridOptions" ui-grid-grouping ui-grid-selection></div>
+            </div>
+        </div>
+    
+
+    <script src="Scripts/MyApp.js"></script>
+</body>
+</html>
